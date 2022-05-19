@@ -10,7 +10,7 @@ public class Zadatak3{
 //        Metoda prima jmbg, ime, prezime, god rodjenja i
 //        da li je aktivan kao parametre metode.
 public static void main(String[] args) {
-    stampa("2652352233", "Dimitrije", "Petronijevic", 1994, true);
+    stampa("2652352233", "Dimitrije", "Petronijevic", 1994, false);
 }
 static void stampa(String jmgb, String ime, String prezime, int godinaRodjenja, boolean aktivan){
     System.out.println("Jmbg: "+ jmgb);

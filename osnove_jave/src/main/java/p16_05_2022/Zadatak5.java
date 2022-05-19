@@ -11,7 +11,7 @@ public class Zadatak5 {
     }
     static void printApsolutnuVrednost(int a){
         if(a>0){
-            System.out.println("Apsolutna vrednost " + a);
+            a=a;
         }else
             a=-a;
         System.out.println("Apsolutna vrednost je " + a);
