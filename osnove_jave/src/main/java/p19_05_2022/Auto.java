@@ -40,6 +40,18 @@ public class Auto {
 //    faktor klime - ako je ukljucena klima faktor je 1.2, ako nije ukljucena onda je 1.0
 //            (trenutna brzina / 100.0 * potrosnja na 100km) * faktor klime
 
+//    Dopuniti klasu Auto tako da ima:
+//    atribut godinu proizvodnje
+//    atribut mesec do kad je registrovan auto (int)
+//    atribut kubikaza auta (npr: 1600 - 5000)
+//    metodu koja vraca da li je auto oldtimer, svaki auto proizveden pre 1950 je oldtimer.
+//    metodu koja vraca da li je istekla registracije.
+//    Metoda kao parametar prima trenutni mesec i na osnovu toga vraca true ili false.
+//    metodu koja racuna i vraca cenu registracije za auto.
+//    Za automobile do 2000 kubika cena registracije kubikaza * 100din,
+//    za automobile preko 2000 kubika dodatno se uracunava 30% na cenu.
+
+
 
 
     public String vlasnik;
@@ -49,6 +61,11 @@ public class Auto {
     public int brzina;
     public String registarcija;
     public boolean daLiJeUkljucenaKlima;
+    public int godinaProizvodnje;
+    public int registrovanDo;
+    public double kubikaza;
+    public double kapacitetRezervoara;
+    public double trenutnoURezervoaru;
 
     public void stampa() {
         System.out.println(this.vlasnik);
@@ -82,5 +99,24 @@ public class Auto {
         }
         return this.brzina / 100.0 * this.potrosnja * 1.0;
     }
+    public boolean oldTimer( ) {
+        return  godinaProizvodnje < 1950;
+    }
+     public boolean isteklaRegistracija ( int trenutniMesec){
+           return trenutniMesec > registrovanDo;
+        }
+        public  double cenaRegistacije ( ){
+        if ( kubikaza < 2000 ){
+            return this.kubikaza * 100;
+        }
+        return this.kubikaza * 100 * 1.3;
+        }
+        public double natociGorivo(double kolicina){
+        if(trenutnoURezervoaru + kolicina <= kapacitetRezervoara){
+            return kolicina * 170;
+        }else{
+            return kapacitetRezervoara - trenutnoURezervoaru * 170;
+        }
+        }
 
-}
+   }

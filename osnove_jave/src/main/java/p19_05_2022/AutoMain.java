@@ -10,9 +10,16 @@ public class AutoMain {
         cetvorotockas.brzina = 200;
         cetvorotockas.registarcija = "132425";
         cetvorotockas.daLiJeUkljucenaKlima = true;
+        cetvorotockas.godinaProizvodnje = 2005;
+        cetvorotockas.registrovanDo = 3;
+        cetvorotockas.kubikaza = 1500;
+        cetvorotockas.kapacitetRezervoara = 50;
+        cetvorotockas.trenutnoURezervoaru = 20;
+
+
 
         cetvorotockas.stampa();
-        if(cetvorotockas.prekoracenje(90)){
+        if (cetvorotockas.prekoracenje(90)) {
             System.out.println("Kazna za prekoracenje je " + cetvorotockas.kazna(90));
         }
         System.out.println();
@@ -26,5 +33,20 @@ public class AutoMain {
         cetvorotockas.stampa();
 
         System.out.println("Trenutna potrosnja je " + cetvorotockas.trenutnaPotrosnja());
+
+        if (cetvorotockas.oldTimer()) {
+            System.out.println("Auto je oldtimer");
+        }
+
+        if (cetvorotockas.isteklaRegistracija(7)) {
+            System.out.println("Registracija je istekla");
+        }
+
+        System.out.println("Cena registracije je "+ cetvorotockas.cenaRegistacije());
+
+        System.out.println("Cena goriva nakon dolivanja 5l " + cetvorotockas.natociGorivo(5));
+
+
+
     }
 }
