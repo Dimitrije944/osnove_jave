@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class OsobaMain {
     public static void main(String[] args) {
-        
+
         Scanner s = new Scanner(System.in);
         ArrayList<Igrac> nizIgraca = new ArrayList<Igrac>();
         System.out.println("Unesite broj igraca koji zelite da dodate: ");
